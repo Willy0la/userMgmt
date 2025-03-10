@@ -1,6 +1,4 @@
-"use strict";
-
-class Users {
+/*class Users {
   users = [
     {
       id: "1",
@@ -39,7 +37,7 @@ class Users {
       role: "Warehousers",
     },
   ];
-
+/*
   getUserById(id) {
     for (let i = 0; i < this.users.length; i++) {
       if (this.users[i].id === id) {
@@ -49,7 +47,7 @@ class Users {
         break;
       } else {
         console.log("User not found");
-        break
+        break;
       }
     }
   }
@@ -93,11 +91,13 @@ class Users {
   };
   deleteUser = (id) => {
     for (let i = 0; i < this.users.length; i++) {
-if(this.users[i].id === id){
- this.users.splice(i, 1)
-        console.log( `the user with the id: ${id} has been deleted`);break
-    }console.log("User not found")
-}
+      if (this.users[i].id === id) {
+        this.users.splice(i, 1);
+        console.log(`the user with the id: ${id} has been deleted`);
+        break;
+      }
+      console.log("User not found");
+    }
   };
 }
 
@@ -120,3 +120,120 @@ check.deleteUser(
   "backend Dev",
   "olaayeni@mail.com"
 );
+*/
+
+class User {
+  users = [
+    {
+      id: 1,
+      username: "willowert",
+      password: "wellopoplpk",
+      email: "ola@gmail.com",
+      role: "Intern",
+    },
+    {
+      id: 2,
+      username: "wilbrentt",
+      password: "senioretopl",
+      email: "olade@gmail.com",
+      role: "ADMIN",
+    },
+    {
+      id: 3,
+      username: "Villart",
+      password: "welq2345plpk",
+      email: "olape@gmail.com",
+      role: "Operation",
+    },
+
+    {
+      id: 4,
+      username: "wilbeert",
+      password: "wel876plpk",
+      email: "olaje@gmail.com",
+      role: "Product",
+    },
+    {
+      id: 5,
+      username: "willveert",
+      password: "poilutopibnl",
+      email: "olashe@gmail.com",
+      role: "Warehousers",
+    },
+  ];
+
+  getUserByID(id) {
+    id = Number(id);
+    const user = this.users.find((user) => user.id === id);
+
+    if (!user) {
+      console.log("user does not exist");
+    } else {
+      console.log(user);
+    }
+  }
+  getAllUser() {
+    console.table(this.users);
+  }
+  createUser(id, name, username, password, email, role) {
+    id = Number(id)
+    let user = {
+      id: id,
+      name: name,
+      username: username,
+      password: password,
+      email: email,
+      role: role,
+    };
+     
+    this.users.push(user)
+
+    console.log(user)
+ 
+  } 
+  updateUser(email, newEmail){
+    
+    const user = this.users.find((user)=> user.email === email)
+
+    if(user){
+      user.email = newEmail
+
+    console.log(`old email ${email}  has been updated to new email:...${newEmail}`)
+    }
+   
+   
+     
+   
+   
+  }
+
+  delUser(id){
+
+    id = Number(id)
+    const userID = this.users.findIndex((user)=> user.id === id)
+ 
+
+  if(userID !== -1){
+   
+    let delUser = this.users.splice(userID, 1)
+   
+    console.log( delUser,"\n has been deleted")
+
+  }else{
+    console.log("User not found")
+  }
+  }
+  
+
+  
+
+  }
+
+
+const check = new User();
+
+check.getUserByID(1);
+check.getAllUser();
+check.createUser(12, "willofp", "itero@gmail.com", "octivbevsser@mail.com", "Backend","rtyfguh");
+check.updateUser("olaje@gmail.com", "okocha@gmail.com");
+check.delUser(12);

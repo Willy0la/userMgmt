@@ -33,11 +33,7 @@ if (AvgDolphins > AvgKoalas && AvgDolphins >= min) {
   console.log(`Dolphins win with ${AvgDolphins} score`);
 } else if (AvgKoalas > AvgDolphins && AvgKoalas >= min) {
   console.log(`Koalas win with ${AvgKoalas} score`);
-} else if (
-  AvgDolphins === AvgKoalas &&
-  AvgDolphins >= min &&
-  AvgKoalas >= min
-)
+} else if (AvgDolphins === AvgKoalas && AvgDolphins >= min && AvgKoalas >= min)
   console.log(`it was a Draw`);
 else {
   console.log(`There was no winner in the game`);
@@ -143,100 +139,101 @@ const jonasfriend = `${Jonas.firstName} has 3  ${Jonas.friends} friends, and his
 console.log(jonasfriend);
 console.log(Jonas.getSummary());
 
- const mark = {
+const mark = {
   fullName: "Mark Miller",
   mass: 78,
-   height: 1.69,
-   calcBMI: function () {
-     this.bmi = this.mass / this.height ** 2;
+  height: 1.69,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
 
-     return this.bmi;
-   },
- };
+    return this.bmi;
+  },
+};
 
- const john = {
-   fullName: "John Smith",
-   mass: 92,
-   height: 1.95,
-   calcBMI: function () {
-     this.bmi = this.mass / this.height ** 2;
+const john = {
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
 
-     return this.bmi;
-   },
- };
+    return this.bmi;
+  },
+};
 
 const johnBeemi = john.calcBMI();
- const markBeemi = mark.calcBMI();
+const markBeemi = mark.calcBMI();
 
- const bmiComparism =
-   johnBeemi > markBeemi
+const bmiComparism =
+  johnBeemi > markBeemi
     ? `John's BMI ${johnBeemi} is higher than Mark's ${markBeemi} `
-     : `Mark's BMI ${markBeemi} is higher than John's ${johnBeemi}`;
+    : `Mark's BMI ${markBeemi} is higher than John's ${johnBeemi}`;
 
- console.log(bmiComparism);
+console.log(bmiComparism);
 
- for (let rep = 1; rep <= 10; rep++) {
-   console.log(`i am lifting  each rep, count with me  ${rep}`);
- }
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`i am lifting  each rep, count with me  ${rep}`);
+}
 // //creating new arr
 
- const games = ["Willy", "Oladipi", 124 - 10, true, "sven", "will"];
- const type = [];
+const games = ["Willy", "Oladipi", 124 - 10, true, "sven", "will"];
+const type = [];
 
- console.log("-----");
+console.log("-----");
 for (let i = 0; i < games.length; i++) {
   if (typeof games[i] !== "string") continue;
   console.log(games[i]);
-   type[i] = typeof games[i]; }
- const read = games.map((game) => {
-   return typeof game;
- });
+  type[i] = typeof games[i];
+}
+const read = games.map((game) => {
+  return typeof game;
+});
 
- console.log(read);
- console.log(type);
+console.log(read);
+console.log(type);
 
- const year = [1991, 2007, 1969, 2020];
- const age = [];
+const year = [1991, 2007, 1969, 2020];
+const age = [];
 
- for (let i = 0; i < year.length; i++) {
-   const currentYear = 2025;
-   const diff = currentYear - year[i];
-   age[i] = diff;
- }
+for (let i = 0; i < year.length; i++) {
+  const currentYear = 2025;
+  const diff = currentYear - year[i];
+  age[i] = diff;
+}
 
- console.log(age);
+console.log(age);
 
- const ager = year.map((years) => {
-   return 2025 - years;
- });
- console.log(ager);
+const ager = year.map((years) => {
+  return 2025 - years;
+});
+console.log(ager);
 
- const boll = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const boll = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 
- const solvAvg = (arr) => {
-   let sum = 0;
+const solvAvg = (arr) => {
+  let sum = 0;
 
   for (let i = 0; i < arr.length; i++) {
     const element = (sum += arr[i]);
 
-   return element;
+    return element;
   }
 
-   return element / arr.length;
- };
+  return element / arr.length;
+};
 
- console.log(solvAvg(boll));
+console.log(solvAvg(boll));
 
- let tips = [];
- let total = [];
+let tips = [];
+let total = [];
 
- const calculateTip = (bill) => {
-   const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+const calculateTip = (bill) => {
+  const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 
-   return tip;
- };
+  return tip;
+};
 
- console.log("--------");
+console.log("--------");
 
 for (let i = 0; i < boll.length; i++) {
   const tippy = calculateTip(boll[i]);
@@ -362,4 +359,3 @@ console.log(numbers.average([1, 2, 3, 4, 5]));
 console.log(numbers.sum([1, 2, 3, 4, 5]));
 console.log(numbers.even([1, 2, 3, 4, 5]));
 console.log(numbers.odd([1, 2, 3, 4, 5]));
-
